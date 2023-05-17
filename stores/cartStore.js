@@ -25,5 +25,21 @@ export const useCartStore = defineStore('cart', {
 				method: 'delete'
 			})
 		},
+		async increaseQuantity(product) {
+			let updatedProduct
+			this.cart = this.cart.map(p => {
+				if (p.id === product.id) {
+					p.quantity++
+					updatedProduct = p
+				}
+				return p
+			})
+
+			//make put request
+			await $fetch('http://localhost:4000/cart/' + product.id, {
+				method: 'put',
+				body: JSON.stringify(updatedProduct)
+			})
+		}
 	}
 })
