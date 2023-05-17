@@ -1,0 +1,17 @@
+<template>
+	<div>
+		<header class="wrapper flex justify-between">
+			<NuxtLink to="/">
+				<h1 class="text-secondary text-5xl">Adventure Store</h1>
+			</NuxtLink>
+			<NuxtLink to="/cart">
+				<span class="material-symbols-outlined text-secondary text-5xl">shopping_bag
+				</span>
+
+			</NuxtLink>
+		</header>
+		<div class="wrapper">
+			<slot/>
+		</div>
+	</div>
+</template>
