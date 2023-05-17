@@ -15,3 +15,10 @@
 		</div>
 	</div>
 </template>
+<script setup>
+	import {useCartStore} from '@/stores/cartStore'
+
+	const cartStore = useCartStore()
+
+	cartStore.getCart()
+</script>
