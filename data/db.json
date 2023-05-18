@@ -6,7 +6,7 @@
       "description": "Gain heat resistance for 3 minutes.",
       "img": "/img/potion.png",
       "id": 1,
-      "quantity": 1
+      "quantity": 2
     },
     {
       "title": "Poison Hammer",
@@ -23,6 +23,38 @@
       "img": "/img/shield.png",
       "id": 3,
       "quantity": 4
+    },
+    {
+      "id": 4
+    },
+    {
+      "id": 5
+    },
+    {
+      "id": 6
+    },
+    {
+      "id": 7
+    },
+    {
+      "title": "Healing Herbs",
+      "price": 30,
+      "description": "Restores user back to full health.",
+      "img": "/img/herb.png",
+      "id": 8,
+      "quantity": 3
+    },
+    {
+      "id": 9
+    },
+    {
+      "id": 10
+    },
+    {
+      "id": 11
+    },
+    {
+      "id": 12
     }
   ],
   "products": [
