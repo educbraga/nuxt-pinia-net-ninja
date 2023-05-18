@@ -9,6 +9,11 @@ export const useCartStore = defineStore('cart', {
 			return this.cart.reduce((total, item) => {
 				return total + (item.price * item.quantity)
 			}, 0)
+		},
+		numberOfProducts() {
+			return this.cart.reduce((total, item) => {
+				return total + item.quantity
+			}, 0)
 		}
 	},
 	actions: {
@@ -60,19 +65,21 @@ export const useCartStore = defineStore('cart', {
 			}
 		},
 		async addToCart(product) {
-			const exists = this.cart.find(p => p.id === product.id)
-			if (exists) {
-				this.increaseQuantity(product)
-			}
+	      const exists = this.cart.find((p) => p.id === product.id)
 
-			if(!exists) {
-				this.cart.push({...product, quantity: 1})
-			}
+	      if (exists) {
+	        this.increaseQuantity(product)
+	      }
 
-			await fetch('http://localhost:4000/cart', {
-				method: 'post',
-				body: JSON.stringify({...product, quantity: 1})
-			})
-		}
+	      if (!exists) {
+	        this.cart.push({...product, quantity: 1})
+
+	        // make post request
+	        await $fetch('http://localhost:4000/cart', {
+	          method: 'post',
+	          body: JSON.stringify({...product, quantity: 1})
+	        })
+	      } 
+	    },
 	}
 })
