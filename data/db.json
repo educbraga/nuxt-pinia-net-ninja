@@ -6,7 +6,7 @@
       "description": "Gain heat resistance for 3 minutes.",
       "img": "/img/potion.png",
       "id": 1,
-      "quantity": 2
+      "quantity": 3
     },
     {
       "title": "Poison Hammer",
@@ -55,6 +55,9 @@
     },
     {
       "id": 12
+    },
+    {
+      "id": 13
     }
   ],
   "products": [
